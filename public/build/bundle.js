@@ -376,42 +376,145 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[8] = list[i];
-    	child_ctx[10] = i;
+    	child_ctx[12] = list[i];
+    	child_ctx[14] = i;
     	return child_ctx;
     }
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[11] = list[i];
-    	child_ctx[13] = i;
+    	child_ctx[15] = list[i];
+    	child_ctx[17] = i;
     	return child_ctx;
     }
 
     function get_each_context_2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[14] = list[i];
+    	child_ctx[18] = list[i];
     	return child_ctx;
     }
 
-    // (33:6) {:else}
-    function create_else_block_1(ctx) {
+    // (49:6) {:else}
+    function create_else_block_2(ctx) {
     	let button;
-    	let t_value = /*letter*/ ctx[14] + "";
+    	let t_value = /*letter*/ ctx[18] + "";
     	let t;
     	let mounted;
     	let dispose;
 
-    	function click_handler_1() {
-    		return /*click_handler_1*/ ctx[5](/*letter*/ ctx[14]);
+    	function click_handler_2() {
+    		return /*click_handler_2*/ ctx[7](/*letter*/ ctx[18]);
     	}
 
     	const block = {
     		c: function create() {
     			button = element("button");
     			t = text(t_value);
-    			attr_dev(button, "class", "alphi baseline svelte-1mwex2q");
-    			add_location(button, file, 33, 8, 960);
+    			attr_dev(button, "class", "alphi baseline svelte-17axbqj");
+    			add_location(button, file, 49, 8, 1332);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, button, anchor);
+    			append_dev(button, t);
+
+    			if (!mounted) {
+    				dispose = listen_dev(button, "click", click_handler_2, false, false, false);
+    				mounted = true;
+    			}
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(button);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block_2.name,
+    		type: "else",
+    		source: "(49:6) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (39:6) {#if guessBoard[0].indexOf(letter) >= 0 || guessBoard[1].indexOf(letter) >= 0 || guessBoard[2].indexOf(letter) >= 0 || guessBoard[3].indexOf(letter) >= 0 || guessBoard[4].indexOf(letter) >= 0}
+    function create_if_block_2(ctx) {
+    	let show_if;
+    	let if_block_anchor;
+
+    	function select_block_type_1(ctx, dirty) {
+    		if (dirty & /*wordle*/ 1) show_if = null;
+    		if (show_if == null) show_if = !!/*wordle*/ ctx[0].includes(/*letter*/ ctx[18]);
+    		if (show_if) return create_if_block_3;
+    		return create_else_block_1;
+    	}
+
+    	let current_block_type = select_block_type_1(ctx, -1);
+    	let if_block = current_block_type(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if_block.c();
+    			if_block_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (current_block_type === (current_block_type = select_block_type_1(ctx, dirty)) && if_block) {
+    				if_block.p(ctx, dirty);
+    			} else {
+    				if_block.d(1);
+    				if_block = current_block_type(ctx);
+
+    				if (if_block) {
+    					if_block.c();
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if_block.d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_2.name,
+    		type: "if",
+    		source: "(39:6) {#if guessBoard[0].indexOf(letter) >= 0 || guessBoard[1].indexOf(letter) >= 0 || guessBoard[2].indexOf(letter) >= 0 || guessBoard[3].indexOf(letter) >= 0 || guessBoard[4].indexOf(letter) >= 0}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (44:8) {:else}
+    function create_else_block_1(ctx) {
+    	let button;
+    	let t_value = /*letter*/ ctx[18] + "";
+    	let t;
+    	let mounted;
+    	let dispose;
+
+    	function click_handler_1() {
+    		return /*click_handler_1*/ ctx[6](/*letter*/ ctx[18]);
+    	}
+
+    	const block = {
+    		c: function create() {
+    			button = element("button");
+    			t = text(t_value);
+    			attr_dev(button, "class", "alphi black svelte-17axbqj");
+    			add_location(button, file, 44, 10, 1197);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -436,31 +539,31 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(33:6) {:else}",
+    		source: "(44:8) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (29:6) {#if guessBoard[0].indexOf(letter) >= 0 || guessBoard[1].indexOf(letter) >= 0 || guessBoard[2].indexOf(letter) >= 0 || guessBoard[3].indexOf(letter) >= 0 || guessBoard[4].indexOf(letter) >= 0}
-    function create_if_block_2(ctx) {
+    // (40:8) {#if wordle.includes(letter)}
+    function create_if_block_3(ctx) {
     	let button;
-    	let t_value = /*letter*/ ctx[14] + "";
+    	let t_value = /*letter*/ ctx[18] + "";
     	let t;
     	let mounted;
     	let dispose;
 
     	function click_handler() {
-    		return /*click_handler*/ ctx[4](/*letter*/ ctx[14]);
+    		return /*click_handler*/ ctx[5](/*letter*/ ctx[18]);
     	}
 
     	const block = {
     		c: function create() {
     			button = element("button");
     			t = text(t_value);
-    			attr_dev(button, "class", "alphi black svelte-1mwex2q");
-    			add_location(button, file, 29, 8, 843);
+    			attr_dev(button, "class", "alphi green svelte-17axbqj");
+    			add_location(button, file, 40, 10, 1072);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -483,25 +586,25 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_2.name,
+    		id: create_if_block_3.name,
     		type: "if",
-    		source: "(29:6) {#if guessBoard[0].indexOf(letter) >= 0 || guessBoard[1].indexOf(letter) >= 0 || guessBoard[2].indexOf(letter) >= 0 || guessBoard[3].indexOf(letter) >= 0 || guessBoard[4].indexOf(letter) >= 0}",
+    		source: "(40:8) {#if wordle.includes(letter)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (28:4) {#each ALPHABET as letter}
+    // (38:4) {#each ALPHABET as letter}
     function create_each_block_2(ctx) {
     	let show_if;
     	let if_block_anchor;
 
     	function select_block_type(ctx, dirty) {
     		if (dirty & /*guessBoard*/ 2) show_if = null;
-    		if (show_if == null) show_if = !!(/*guessBoard*/ ctx[1][0].indexOf(/*letter*/ ctx[14]) >= 0 || /*guessBoard*/ ctx[1][1].indexOf(/*letter*/ ctx[14]) >= 0 || /*guessBoard*/ ctx[1][2].indexOf(/*letter*/ ctx[14]) >= 0 || /*guessBoard*/ ctx[1][3].indexOf(/*letter*/ ctx[14]) >= 0 || /*guessBoard*/ ctx[1][4].indexOf(/*letter*/ ctx[14]) >= 0);
+    		if (show_if == null) show_if = !!(/*guessBoard*/ ctx[1][0].indexOf(/*letter*/ ctx[18]) >= 0 || /*guessBoard*/ ctx[1][1].indexOf(/*letter*/ ctx[18]) >= 0 || /*guessBoard*/ ctx[1][2].indexOf(/*letter*/ ctx[18]) >= 0 || /*guessBoard*/ ctx[1][3].indexOf(/*letter*/ ctx[18]) >= 0 || /*guessBoard*/ ctx[1][4].indexOf(/*letter*/ ctx[18]) >= 0);
     		if (show_if) return create_if_block_2;
-    		return create_else_block_1;
+    		return create_else_block_2;
     	}
 
     	let current_block_type = select_block_type(ctx, -1);
@@ -539,33 +642,33 @@ var app = (function () {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(28:4) {#each ALPHABET as letter}",
+    		source: "(38:4) {#each ALPHABET as letter}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (50:10) {:else}
+    // (66:10) {:else}
     function create_else_block(ctx) {
     	let div;
-    	let t_value = /*guessBoard*/ ctx[1][/*gr*/ ctx[10]][/*gi*/ ctx[13]] + "";
+    	let t_value = /*guessBoard*/ ctx[1][/*gr*/ ctx[14]][/*gi*/ ctx[17]] + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			div = element("div");
     			t = text(t_value);
-    			attr_dev(div, "class", "guessI svelte-1mwex2q");
-    			attr_dev(div, "id", /*gi*/ ctx[13]);
-    			add_location(div, file, 50, 12, 1603);
+    			attr_dev(div, "class", "guessI svelte-17axbqj");
+    			attr_dev(div, "id", /*gi*/ ctx[17]);
+    			add_location(div, file, 66, 12, 1975);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			append_dev(div, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*guessBoard*/ 2 && t_value !== (t_value = /*guessBoard*/ ctx[1][/*gr*/ ctx[10]][/*gi*/ ctx[13]] + "")) set_data_dev(t, t_value);
+    			if (dirty & /*guessBoard*/ 2 && t_value !== (t_value = /*guessBoard*/ ctx[1][/*gr*/ ctx[14]][/*gi*/ ctx[17]] + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
@@ -576,33 +679,33 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(50:10) {:else}",
+    		source: "(66:10) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (48:89) 
+    // (64:89) 
     function create_if_block_1(ctx) {
     	let div;
-    	let t_value = /*guessBoard*/ ctx[1][/*gr*/ ctx[10]][/*gi*/ ctx[13]] + "";
+    	let t_value = /*guessBoard*/ ctx[1][/*gr*/ ctx[14]][/*gi*/ ctx[17]] + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			div = element("div");
     			t = text(t_value);
-    			attr_dev(div, "class", "guessI yellow svelte-1mwex2q");
-    			attr_dev(div, "id", /*gi*/ ctx[13]);
-    			add_location(div, file, 48, 12, 1511);
+    			attr_dev(div, "class", "guessI yellow svelte-17axbqj");
+    			attr_dev(div, "id", /*gi*/ ctx[17]);
+    			add_location(div, file, 64, 12, 1883);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			append_dev(div, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*guessBoard*/ 2 && t_value !== (t_value = /*guessBoard*/ ctx[1][/*gr*/ ctx[10]][/*gi*/ ctx[13]] + "")) set_data_dev(t, t_value);
+    			if (dirty & /*guessBoard*/ 2 && t_value !== (t_value = /*guessBoard*/ ctx[1][/*gr*/ ctx[14]][/*gi*/ ctx[17]] + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
@@ -613,33 +716,33 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(48:89) ",
+    		source: "(64:89) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (46:10) {#if guessBoard[gr][gi] === wordle[gi]}
+    // (62:10) {#if guessBoard[gr][gi] === wordle[gi]}
     function create_if_block(ctx) {
     	let div;
-    	let t_value = /*guessBoard*/ ctx[1][/*gr*/ ctx[10]][/*gi*/ ctx[13]] + "";
+    	let t_value = /*guessBoard*/ ctx[1][/*gr*/ ctx[14]][/*gi*/ ctx[17]] + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			div = element("div");
     			t = text(t_value);
-    			attr_dev(div, "class", "guessI green svelte-1mwex2q");
-    			attr_dev(div, "id", /*gi*/ ctx[13]);
-    			add_location(div, file, 46, 12, 1348);
+    			attr_dev(div, "class", "guessI green svelte-17axbqj");
+    			attr_dev(div, "id", /*gi*/ ctx[17]);
+    			add_location(div, file, 62, 12, 1720);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			append_dev(div, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*guessBoard*/ 2 && t_value !== (t_value = /*guessBoard*/ ctx[1][/*gr*/ ctx[10]][/*gi*/ ctx[13]] + "")) set_data_dev(t, t_value);
+    			if (dirty & /*guessBoard*/ 2 && t_value !== (t_value = /*guessBoard*/ ctx[1][/*gr*/ ctx[14]][/*gi*/ ctx[17]] + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
@@ -650,27 +753,27 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(46:10) {#if guessBoard[gr][gi] === wordle[gi]}",
+    		source: "(62:10) {#if guessBoard[gr][gi] === wordle[gi]}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (45:8) {#each guessRow as guessI, gi}
+    // (61:8) {#each guessRow as guessI, gi}
     function create_each_block_1(ctx) {
     	let show_if;
     	let if_block_anchor;
 
-    	function select_block_type_1(ctx, dirty) {
+    	function select_block_type_2(ctx, dirty) {
     		if (dirty & /*guessBoard, wordle*/ 3) show_if = null;
-    		if (/*guessBoard*/ ctx[1][/*gr*/ ctx[10]][/*gi*/ ctx[13]] === /*wordle*/ ctx[0][/*gi*/ ctx[13]]) return create_if_block;
-    		if (show_if == null) show_if = !!(/*guessBoard*/ ctx[1][/*gr*/ ctx[10]][/*gi*/ ctx[13]] !== "" && /*wordle*/ ctx[0].indexOf(/*guessBoard*/ ctx[1][/*gr*/ ctx[10]][/*gi*/ ctx[13]]) >= 0);
+    		if (/*guessBoard*/ ctx[1][/*gr*/ ctx[14]][/*gi*/ ctx[17]] === /*wordle*/ ctx[0][/*gi*/ ctx[17]]) return create_if_block;
+    		if (show_if == null) show_if = !!(/*guessBoard*/ ctx[1][/*gr*/ ctx[14]][/*gi*/ ctx[17]] !== "" && /*wordle*/ ctx[0].indexOf(/*guessBoard*/ ctx[1][/*gr*/ ctx[14]][/*gi*/ ctx[17]]) >= 0);
     		if (show_if) return create_if_block_1;
     		return create_else_block;
     	}
 
-    	let current_block_type = select_block_type_1(ctx, -1);
+    	let current_block_type = select_block_type_2(ctx, -1);
     	let if_block = current_block_type(ctx);
 
     	const block = {
@@ -683,7 +786,7 @@ var app = (function () {
     			insert_dev(target, if_block_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (current_block_type === (current_block_type = select_block_type_1(ctx, dirty)) && if_block) {
+    			if (current_block_type === (current_block_type = select_block_type_2(ctx, dirty)) && if_block) {
     				if_block.p(ctx, dirty);
     			} else {
     				if_block.d(1);
@@ -705,18 +808,18 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(45:8) {#each guessRow as guessI, gi}",
+    		source: "(61:8) {#each guessRow as guessI, gi}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (43:4) {#each guessBoard as guessRow, gr}
+    // (59:4) {#each guessBoard as guessRow, gr}
     function create_each_block(ctx) {
     	let div;
     	let t;
-    	let each_value_1 = /*guessRow*/ ctx[8];
+    	let each_value_1 = /*guessRow*/ ctx[12];
     	validate_each_argument(each_value_1);
     	let each_blocks = [];
 
@@ -733,9 +836,9 @@ var app = (function () {
     			}
 
     			t = space();
-    			attr_dev(div, "class", "guessRow svelte-1mwex2q");
-    			attr_dev(div, "id", /*gr*/ ctx[10]);
-    			add_location(div, file, 43, 6, 1216);
+    			attr_dev(div, "class", "guessRow svelte-17axbqj");
+    			attr_dev(div, "id", /*gr*/ ctx[14]);
+    			add_location(div, file, 59, 6, 1588);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -748,7 +851,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*guessBoard, wordle*/ 3) {
-    				each_value_1 = /*guessRow*/ ctx[8];
+    				each_value_1 = /*guessRow*/ ctx[12];
     				validate_each_argument(each_value_1);
     				let i;
 
@@ -781,7 +884,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(43:4) {#each guessBoard as guessRow, gr}",
+    		source: "(59:4) {#each guessBoard as guessRow, gr}",
     		ctx
     	});
 
@@ -795,6 +898,8 @@ var app = (function () {
     	let div0;
     	let t2;
     	let div1;
+    	let mounted;
+    	let dispose;
     	let each_value_2 = /*ALPHABET*/ ctx[2];
     	validate_each_argument(each_value_2);
     	let each_blocks_1 = [];
@@ -830,14 +935,14 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(h1, "class", "svelte-1mwex2q");
-    			add_location(h1, file, 24, 2, 519);
-    			attr_dev(div0, "class", "keyboard svelte-1mwex2q");
-    			add_location(div0, file, 26, 2, 582);
-    			attr_dev(div1, "class", "gridContainer svelte-1mwex2q");
-    			add_location(div1, file, 41, 2, 1143);
-    			attr_dev(main, "class", "svelte-1mwex2q");
-    			add_location(main, file, 23, 0, 510);
+    			attr_dev(h1, "class", "svelte-17axbqj");
+    			add_location(h1, file, 34, 2, 708);
+    			attr_dev(div0, "class", "keyboard svelte-17axbqj");
+    			add_location(div0, file, 36, 2, 771);
+    			attr_dev(div1, "class", "gridContainer svelte-17axbqj");
+    			add_location(div1, file, 57, 2, 1515);
+    			attr_dev(main, "class", "svelte-17axbqj");
+    			add_location(main, file, 33, 0, 699);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -858,9 +963,14 @@ var app = (function () {
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(div1, null);
     			}
+
+    			if (!mounted) {
+    				dispose = listen_dev(window, "keydown", /*handleKeydown*/ ctx[4], false, false, false);
+    				mounted = true;
+    			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*add, ALPHABET, guessBoard*/ 14) {
+    			if (dirty & /*add, ALPHABET, wordle, guessBoard*/ 15) {
     				each_value_2 = /*ALPHABET*/ ctx[2];
     				validate_each_argument(each_value_2);
     				let i;
@@ -914,6 +1024,8 @@ var app = (function () {
     			if (detaching) detach_dev(main);
     			destroy_each(each_blocks_1, detaching);
     			destroy_each(each_blocks, detaching);
+    			mounted = false;
+    			dispose();
     		}
     	};
 
@@ -955,6 +1067,15 @@ var app = (function () {
     		}
     	};
 
+    	let key;
+    	let keyCode;
+
+    	function handleKeydown(event) {
+    		key = event.key;
+    		keyCode = event.keyCode;
+    		add(key.toUpperCase());
+    	}
+
     	const writable_props = ['wordle'];
 
     	Object.keys($$props).forEach(key => {
@@ -963,6 +1084,7 @@ var app = (function () {
 
     	const click_handler = letter => add(letter);
     	const click_handler_1 = letter => add(letter);
+    	const click_handler_2 = letter => add(letter);
 
     	$$self.$$set = $$props => {
     		if ('wordle' in $$props) $$invalidate(0, wordle = $$props.wordle);
@@ -974,20 +1096,34 @@ var app = (function () {
     		letterCount,
     		wordCount,
     		guessBoard,
-    		add
+    		add,
+    		key,
+    		keyCode,
+    		handleKeydown
     	});
 
     	$$self.$inject_state = $$props => {
     		if ('wordle' in $$props) $$invalidate(0, wordle = $$props.wordle);
     		if ('letterCount' in $$props) letterCount = $$props.letterCount;
     		if ('wordCount' in $$props) wordCount = $$props.wordCount;
+    		if ('key' in $$props) key = $$props.key;
+    		if ('keyCode' in $$props) keyCode = $$props.keyCode;
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [wordle, guessBoard, ALPHABET, add, click_handler, click_handler_1];
+    	return [
+    		wordle,
+    		guessBoard,
+    		ALPHABET,
+    		add,
+    		handleKeydown,
+    		click_handler,
+    		click_handler_1,
+    		click_handler_2
+    	];
     }
 
     class App extends SvelteComponentDev {
