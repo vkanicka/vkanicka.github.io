@@ -410,7 +410,7 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			t = text(t_value);
-    			attr_dev(button, "class", "alphi baseline svelte-sni28c");
+    			attr_dev(button, "class", "alphi baseline svelte-1mwex2q");
     			add_location(button, file, 33, 8, 960);
     		},
     		m: function mount(target, anchor) {
@@ -459,7 +459,7 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			t = text(t_value);
-    			attr_dev(button, "class", "alphi black svelte-sni28c");
+    			attr_dev(button, "class", "alphi black svelte-1mwex2q");
     			add_location(button, file, 29, 8, 843);
     		},
     		m: function mount(target, anchor) {
@@ -556,7 +556,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			t = text(t_value);
-    			attr_dev(div, "class", "guessI svelte-sni28c");
+    			attr_dev(div, "class", "guessI svelte-1mwex2q");
     			attr_dev(div, "id", /*gi*/ ctx[13]);
     			add_location(div, file, 50, 12, 1603);
     		},
@@ -593,7 +593,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			t = text(t_value);
-    			attr_dev(div, "class", "guessI yellow svelte-sni28c");
+    			attr_dev(div, "class", "guessI yellow svelte-1mwex2q");
     			attr_dev(div, "id", /*gi*/ ctx[13]);
     			add_location(div, file, 48, 12, 1511);
     		},
@@ -630,7 +630,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			t = text(t_value);
-    			attr_dev(div, "class", "guessI green svelte-sni28c");
+    			attr_dev(div, "class", "guessI green svelte-1mwex2q");
     			attr_dev(div, "id", /*gi*/ ctx[13]);
     			add_location(div, file, 46, 12, 1348);
     		},
@@ -733,7 +733,7 @@ var app = (function () {
     			}
 
     			t = space();
-    			attr_dev(div, "class", "guessRow svelte-sni28c");
+    			attr_dev(div, "class", "guessRow svelte-1mwex2q");
     			attr_dev(div, "id", /*gr*/ ctx[10]);
     			add_location(div, file, 43, 6, 1216);
     		},
@@ -830,13 +830,13 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(h1, "class", "svelte-sni28c");
+    			attr_dev(h1, "class", "svelte-1mwex2q");
     			add_location(h1, file, 24, 2, 519);
-    			attr_dev(div0, "class", "keyboard svelte-sni28c");
+    			attr_dev(div0, "class", "keyboard svelte-1mwex2q");
     			add_location(div0, file, 26, 2, 582);
-    			attr_dev(div1, "class", "gridContainer svelte-sni28c");
+    			attr_dev(div1, "class", "gridContainer svelte-1mwex2q");
     			add_location(div1, file, 41, 2, 1143);
-    			attr_dev(main, "class", "svelte-sni28c");
+    			attr_dev(main, "class", "svelte-1mwex2q");
     			add_location(main, file, 23, 0, 510);
     		},
     		l: function claim(nodes) {
