@@ -914,7 +914,7 @@ var app = (function () {
     			button = element("button");
     			t = text(t_value);
     			attr_dev(button, "class", "alphi baseline svelte-y4zuf3");
-    			add_location(button, file, 84, 8, 2122);
+    			add_location(button, file, 84, 8, 2139);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -1017,7 +1017,7 @@ var app = (function () {
     			button = element("button");
     			t = text(t_value);
     			attr_dev(button, "class", "alphi black svelte-y4zuf3");
-    			add_location(button, file, 79, 10, 1987);
+    			add_location(button, file, 79, 10, 2004);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -1066,7 +1066,7 @@ var app = (function () {
     			button = element("button");
     			t = text(t_value);
     			attr_dev(button, "class", "alphi aqua svelte-y4zuf3");
-    			add_location(button, file, 75, 10, 1863);
+    			add_location(button, file, 75, 10, 1880);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -1164,7 +1164,7 @@ var app = (function () {
     			t = text(t_value);
     			attr_dev(div, "class", "guessI svelte-y4zuf3");
     			attr_dev(div, "id", /*gi*/ ctx[21]);
-    			add_location(div, file, 103, 12, 2941);
+    			add_location(div, file, 103, 12, 2958);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1201,7 +1201,7 @@ var app = (function () {
     			t = text(t_value);
     			attr_dev(div, "class", "guessI yellow svelte-y4zuf3");
     			attr_dev(div, "id", /*gi*/ ctx[21]);
-    			add_location(div, file, 101, 12, 2849);
+    			add_location(div, file, 101, 12, 2866);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1238,7 +1238,7 @@ var app = (function () {
     			t = text(t_value);
     			attr_dev(div, "class", "guessI green svelte-y4zuf3");
     			attr_dev(div, "id", /*gi*/ ctx[21]);
-    			add_location(div, file, 99, 12, 2686);
+    			add_location(div, file, 99, 12, 2703);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1341,7 +1341,7 @@ var app = (function () {
     			t = space();
     			attr_dev(div, "class", "guessRow svelte-y4zuf3");
     			attr_dev(div, "id", /*gr*/ ctx[18]);
-    			add_location(div, file, 96, 6, 2554);
+    			add_location(div, file, 96, 6, 2571);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1449,21 +1449,21 @@ var app = (function () {
     			}
 
     			attr_dev(h1, "class", "svelte-y4zuf3");
-    			add_location(h1, file, 70, 2, 1544);
+    			add_location(h1, file, 70, 2, 1561);
     			attr_dev(div0, "class", "keyboard svelte-y4zuf3");
-    			add_location(div0, file, 71, 2, 1562);
+    			add_location(div0, file, 71, 2, 1579);
     			attr_dev(button0, "id", "backButton");
     			attr_dev(button0, "type", "text");
     			attr_dev(button0, "class", "svelte-y4zuf3");
-    			add_location(button0, file, 90, 2, 2255);
+    			add_location(button0, file, 90, 2, 2272);
     			attr_dev(button1, "id", "resetButton");
     			attr_dev(button1, "type", "submit");
     			attr_dev(button1, "class", "svelte-y4zuf3");
-    			add_location(button1, file, 91, 2, 2323);
+    			add_location(button1, file, 91, 2, 2340);
     			attr_dev(div1, "class", "gridContainer svelte-y4zuf3");
-    			add_location(div1, file, 94, 2, 2481);
+    			add_location(div1, file, 94, 2, 2498);
     			attr_dev(main, "class", "svelte-y4zuf3");
-    			add_location(main, file, 69, 0, 1535);
+    			add_location(main, file, 69, 0, 1552);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1590,11 +1590,11 @@ var app = (function () {
     		return Math.floor(Math.random() * (max - min + 1) + min);
     	};
 
-    	let wordle = "";
-
     	const pickWordle = () => {
-    		$$invalidate(1, wordle = wordles[rando(1, 500)].toUpperCase());
+    		return wordles[rando(1, 500)].toUpperCase();
     	};
+
+    	let wordle = pickWordle();
 
     	const add = letter => {
     		$$invalidate(0, guessBoard[wordCount][letterCount] = letter, guessBoard);
@@ -1646,7 +1646,7 @@ var app = (function () {
     			["", "", "", "", ""]
     		]);
 
-    		pickWordle();
+    		$$invalidate(1, wordle = pickWordle());
     	};
 
     	const writable_props = [];
@@ -1666,8 +1666,8 @@ var app = (function () {
     		wordCount,
     		guessBoard,
     		rando,
-    		wordle,
     		pickWordle,
+    		wordle,
     		add,
     		key,
     		keyCode,
