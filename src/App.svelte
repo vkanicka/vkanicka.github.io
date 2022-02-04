@@ -19,17 +19,49 @@
       letterCount = 0;
     }
   };
+  let key;
+  let keyCode;
+
+  const handleKeydown = (event) => {
+    key = event.key;
+    keyCode = event.keyCode;
+    add(key.toUpperCase());
+  };
+  const undo = () => {
+    console.log("back button clicked");
+    console.log("word", wordCount);
+    console.log("letter", letterCount);
+    console.log(guessBoard[wordCount][letterCount - 1]);
+    console.log(guessBoard);
+    if (letterCount === 0) {
+      letterCount = 4;
+      wordCount--;
+      console.log("letter now", letterCount);
+    } else {
+      letterCount--;
+    }
+
+    guessBoard[wordCount][letterCount] = "";
+    console.log(guessBoard);
+  };
 </script>
+
+<svelte:window on:keydown={handleKeydown} />
 
 <main>
   <h1>WORDLE</h1>
-  <!-- <button type="text">Back</button> -->
   <div class="keyboard">
     {#each ALPHABET as letter}
       {#if guessBoard[0].indexOf(letter) >= 0 || guessBoard[1].indexOf(letter) >= 0 || guessBoard[2].indexOf(letter) >= 0 || guessBoard[3].indexOf(letter) >= 0 || guessBoard[4].indexOf(letter) >= 0}
-        <button class="alphi black" on:click={() => add(letter)}
-          >{letter}</button
-        >
+        {#if wordle.includes(letter)}
+          <button class="alphi aqua" on:click={() => add(letter)}
+            >{letter}</button
+          >
+        {:else}
+          <button class="alphi black" on:click={() => add(letter)}
+            >{letter}</button
+          >
+        {/if}
       {:else}
         <button class="alphi baseline" on:click={() => add(letter)}
           >{letter}</button
@@ -37,6 +69,7 @@
       {/if}
     {/each}
   </div>
+  <button id="backButton" type="text" on:click={undo}>Back</button>
   <!-- <button type="submit">Submit</button> -->
 
   <div class="gridContainer">
@@ -59,24 +92,36 @@
 <style>
   .keyboard {
     display: flex;
-    margin: 4rem;
+    /* margin: 3rem; */
     flex-wrap: wrap;
-    padding: 0rem 10rem;
+    padding: 0rem 4rem;
     justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  #backButton {
+    /* width: 5rem;
+    height: 4rem; */
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+    font-size: 2rem;
+    color: white;
+    background: tomato;
+    display: inline-block;
   }
   .alphi {
-    width: 5.75rem;
-    height: 5rem;
-    border-radius: 1rem;
+    width: 5rem;
+    height: 4rem;
+    border-radius: 0.5rem;
     margin: 0.5rem;
     font-size: 2rem;
     color: grey;
   }
   .alphi:hover {
-    background: pink;
+    background: thistle;
   }
   .gridContainer {
-    margin: 4rem;
+    margin: 1rem;
     padding: 2rem;
     border-radius: 2rem;
     background-color: lightgray;
@@ -122,6 +167,14 @@
   .yellow {
     background: yellow;
     color: gray;
+  }
+  .aqua {
+    color: grey;
+    background: lime;
+  }
+  .baseline {
+    color: grey;
+    background: aquamarine;
   }
   .black {
     background-color: gray;
