@@ -913,7 +913,7 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			t = text(t_value);
-    			attr_dev(button, "class", "alphi baseline svelte-r79b16");
+    			attr_dev(button, "class", "alphi baseline svelte-y4zuf3");
     			add_location(button, file, 84, 8, 2122);
     		},
     		m: function mount(target, anchor) {
@@ -1016,7 +1016,7 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			t = text(t_value);
-    			attr_dev(button, "class", "alphi black svelte-r79b16");
+    			attr_dev(button, "class", "alphi black svelte-y4zuf3");
     			add_location(button, file, 79, 10, 1987);
     		},
     		m: function mount(target, anchor) {
@@ -1065,7 +1065,7 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			t = text(t_value);
-    			attr_dev(button, "class", "alphi aqua svelte-r79b16");
+    			attr_dev(button, "class", "alphi aqua svelte-y4zuf3");
     			add_location(button, file, 75, 10, 1863);
     		},
     		m: function mount(target, anchor) {
@@ -1162,7 +1162,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			t = text(t_value);
-    			attr_dev(div, "class", "guessI svelte-r79b16");
+    			attr_dev(div, "class", "guessI svelte-y4zuf3");
     			attr_dev(div, "id", /*gi*/ ctx[21]);
     			add_location(div, file, 103, 12, 2941);
     		},
@@ -1199,7 +1199,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			t = text(t_value);
-    			attr_dev(div, "class", "guessI yellow svelte-r79b16");
+    			attr_dev(div, "class", "guessI yellow svelte-y4zuf3");
     			attr_dev(div, "id", /*gi*/ ctx[21]);
     			add_location(div, file, 101, 12, 2849);
     		},
@@ -1236,7 +1236,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			t = text(t_value);
-    			attr_dev(div, "class", "guessI green svelte-r79b16");
+    			attr_dev(div, "class", "guessI green svelte-y4zuf3");
     			attr_dev(div, "id", /*gi*/ ctx[21]);
     			add_location(div, file, 99, 12, 2686);
     		},
@@ -1339,7 +1339,7 @@ var app = (function () {
     			}
 
     			t = space();
-    			attr_dev(div, "class", "guessRow svelte-r79b16");
+    			attr_dev(div, "class", "guessRow svelte-y4zuf3");
     			attr_dev(div, "id", /*gr*/ ctx[18]);
     			add_location(div, file, 96, 6, 2554);
     		},
@@ -1448,21 +1448,21 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(h1, "class", "svelte-r79b16");
+    			attr_dev(h1, "class", "svelte-y4zuf3");
     			add_location(h1, file, 70, 2, 1544);
-    			attr_dev(div0, "class", "keyboard svelte-r79b16");
+    			attr_dev(div0, "class", "keyboard svelte-y4zuf3");
     			add_location(div0, file, 71, 2, 1562);
     			attr_dev(button0, "id", "backButton");
     			attr_dev(button0, "type", "text");
-    			attr_dev(button0, "class", "svelte-r79b16");
+    			attr_dev(button0, "class", "svelte-y4zuf3");
     			add_location(button0, file, 90, 2, 2255);
     			attr_dev(button1, "id", "resetButton");
     			attr_dev(button1, "type", "submit");
-    			attr_dev(button1, "class", "svelte-r79b16");
+    			attr_dev(button1, "class", "svelte-y4zuf3");
     			add_location(button1, file, 91, 2, 2323);
-    			attr_dev(div1, "class", "gridContainer svelte-r79b16");
+    			attr_dev(div1, "class", "gridContainer svelte-y4zuf3");
     			add_location(div1, file, 94, 2, 2481);
-    			attr_dev(main, "class", "svelte-r79b16");
+    			attr_dev(main, "class", "svelte-y4zuf3");
     			add_location(main, file, 69, 0, 1535);
     		},
     		l: function claim(nodes) {
