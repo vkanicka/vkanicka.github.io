@@ -401,7 +401,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (65:6) {:else}
+    // (66:6) {:else}
     function create_else_block_2(ctx) {
     	let button;
     	let t_value = /*letter*/ ctx[19] + "";
@@ -418,7 +418,7 @@ var app = (function () {
     			button = element("button");
     			t = text(t_value);
     			attr_dev(button, "class", "alphi baseline svelte-ls2ki8");
-    			add_location(button, file, 65, 8, 1752);
+    			add_location(button, file, 66, 8, 1710);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -443,14 +443,14 @@ var app = (function () {
     		block,
     		id: create_else_block_2.name,
     		type: "else",
-    		source: "(65:6) {:else}",
+    		source: "(66:6) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (55:6) {#if guessBoard[0].indexOf(letter) >= 0 || guessBoard[1].indexOf(letter) >= 0 || guessBoard[2].indexOf(letter) >= 0 || guessBoard[3].indexOf(letter) >= 0 || guessBoard[4].indexOf(letter) >= 0}
+    // (56:6) {#if guessBoard[0].indexOf(letter) >= 0 || guessBoard[1].indexOf(letter) >= 0 || guessBoard[2].indexOf(letter) >= 0 || guessBoard[3].indexOf(letter) >= 0 || guessBoard[4].indexOf(letter) >= 0}
     function create_if_block_2(ctx) {
     	let show_if;
     	let if_block_anchor;
@@ -497,14 +497,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(55:6) {#if guessBoard[0].indexOf(letter) >= 0 || guessBoard[1].indexOf(letter) >= 0 || guessBoard[2].indexOf(letter) >= 0 || guessBoard[3].indexOf(letter) >= 0 || guessBoard[4].indexOf(letter) >= 0}",
+    		source: "(56:6) {#if guessBoard[0].indexOf(letter) >= 0 || guessBoard[1].indexOf(letter) >= 0 || guessBoard[2].indexOf(letter) >= 0 || guessBoard[3].indexOf(letter) >= 0 || guessBoard[4].indexOf(letter) >= 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (60:8) {:else}
+    // (61:8) {:else}
     function create_else_block_1(ctx) {
     	let button;
     	let t_value = /*letter*/ ctx[19] + "";
@@ -521,7 +521,7 @@ var app = (function () {
     			button = element("button");
     			t = text(t_value);
     			attr_dev(button, "class", "alphi black svelte-ls2ki8");
-    			add_location(button, file, 60, 10, 1617);
+    			add_location(button, file, 61, 10, 1575);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -546,14 +546,14 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(60:8) {:else}",
+    		source: "(61:8) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (56:8) {#if wordle.includes(letter)}
+    // (57:8) {#if wordle.includes(letter)}
     function create_if_block_3(ctx) {
     	let button;
     	let t_value = /*letter*/ ctx[19] + "";
@@ -570,7 +570,7 @@ var app = (function () {
     			button = element("button");
     			t = text(t_value);
     			attr_dev(button, "class", "alphi aqua svelte-ls2ki8");
-    			add_location(button, file, 56, 10, 1493);
+    			add_location(button, file, 57, 10, 1451);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -595,14 +595,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(56:8) {#if wordle.includes(letter)}",
+    		source: "(57:8) {#if wordle.includes(letter)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (54:4) {#each ALPHABET as letter}
+    // (55:4) {#each ALPHABET as letter}
     function create_each_block_2(ctx) {
     	let show_if;
     	let if_block_anchor;
@@ -649,14 +649,14 @@ var app = (function () {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(54:4) {#each ALPHABET as letter}",
+    		source: "(55:4) {#each ALPHABET as letter}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (83:10) {:else}
+    // (84:10) {:else}
     function create_else_block(ctx) {
     	let div;
     	let t_value = /*guessBoard*/ ctx[1][/*gr*/ ctx[15]][/*gi*/ ctx[18]] + "";
@@ -668,7 +668,7 @@ var app = (function () {
     			t = text(t_value);
     			attr_dev(div, "class", "guessI svelte-ls2ki8");
     			attr_dev(div, "id", /*gi*/ ctx[18]);
-    			add_location(div, file, 83, 12, 2463);
+    			add_location(div, file, 84, 12, 2421);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -686,14 +686,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(83:10) {:else}",
+    		source: "(84:10) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (81:89) 
+    // (82:89) 
     function create_if_block_1(ctx) {
     	let div;
     	let t_value = /*guessBoard*/ ctx[1][/*gr*/ ctx[15]][/*gi*/ ctx[18]] + "";
@@ -705,7 +705,7 @@ var app = (function () {
     			t = text(t_value);
     			attr_dev(div, "class", "guessI yellow svelte-ls2ki8");
     			attr_dev(div, "id", /*gi*/ ctx[18]);
-    			add_location(div, file, 81, 12, 2371);
+    			add_location(div, file, 82, 12, 2329);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -723,14 +723,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(81:89) ",
+    		source: "(82:89) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (79:10) {#if guessBoard[gr][gi] === wordle[gi]}
+    // (80:10) {#if guessBoard[gr][gi] === wordle[gi]}
     function create_if_block(ctx) {
     	let div;
     	let t_value = /*guessBoard*/ ctx[1][/*gr*/ ctx[15]][/*gi*/ ctx[18]] + "";
@@ -742,7 +742,7 @@ var app = (function () {
     			t = text(t_value);
     			attr_dev(div, "class", "guessI green svelte-ls2ki8");
     			attr_dev(div, "id", /*gi*/ ctx[18]);
-    			add_location(div, file, 79, 12, 2208);
+    			add_location(div, file, 80, 12, 2166);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -760,14 +760,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(79:10) {#if guessBoard[gr][gi] === wordle[gi]}",
+    		source: "(80:10) {#if guessBoard[gr][gi] === wordle[gi]}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (78:8) {#each guessRow as guessI, gi}
+    // (79:8) {#each guessRow as guessI, gi}
     function create_each_block_1(ctx) {
     	let show_if;
     	let if_block_anchor;
@@ -815,14 +815,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(78:8) {#each guessRow as guessI, gi}",
+    		source: "(79:8) {#each guessRow as guessI, gi}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (76:4) {#each guessBoard as guessRow, gr}
+    // (77:4) {#each guessBoard as guessRow, gr}
     function create_each_block(ctx) {
     	let div;
     	let t;
@@ -845,7 +845,7 @@ var app = (function () {
     			t = space();
     			attr_dev(div, "class", "guessRow svelte-ls2ki8");
     			attr_dev(div, "id", /*gr*/ ctx[15]);
-    			add_location(div, file, 76, 6, 2076);
+    			add_location(div, file, 77, 6, 2034);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -891,7 +891,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(76:4) {#each guessBoard as guessRow, gr}",
+    		source: "(77:4) {#each guessBoard as guessRow, gr}",
     		ctx
     	});
 
@@ -948,17 +948,17 @@ var app = (function () {
     			}
 
     			attr_dev(h1, "class", "svelte-ls2ki8");
-    			add_location(h1, file, 51, 2, 1174);
+    			add_location(h1, file, 52, 2, 1132);
     			attr_dev(div0, "class", "keyboard svelte-ls2ki8");
-    			add_location(div0, file, 52, 2, 1192);
+    			add_location(div0, file, 53, 2, 1150);
     			attr_dev(button, "id", "backButton");
     			attr_dev(button, "type", "text");
     			attr_dev(button, "class", "svelte-ls2ki8");
-    			add_location(button, file, 71, 2, 1885);
+    			add_location(button, file, 72, 2, 1843);
     			attr_dev(div1, "class", "gridContainer svelte-ls2ki8");
-    			add_location(div1, file, 74, 2, 2003);
+    			add_location(div1, file, 75, 2, 1961);
     			attr_dev(main, "class", "svelte-ls2ki8");
-    			add_location(main, file, 50, 0, 1165);
+    			add_location(main, file, 51, 0, 1123);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1093,18 +1093,19 @@ var app = (function () {
     	let keyCode;
 
     	const handleKeydown = event => {
-    		key = event.key;
+    		key = event.key.toUpperCase();
     		keyCode = event.keyCode;
-    		add(key.toUpperCase());
+    		console.log(key);
+    		console.log(ALPHABET.indexOf(key));
+
+    		if (ALPHABET.indexOf(key) >= 0) {
+    			add(key);
+    		} else if (key === "BACKSPACE") {
+    			undo();
+    		}
     	};
 
     	const undo = () => {
-    		console.log("back button clicked");
-    		console.log("word", wordCount);
-    		console.log("letter", letterCount);
-    		console.log(guessBoard[wordCount][letterCount - 1]);
-    		console.log(guessBoard);
-
     		if (letterCount === 0) {
     			letterCount = 4;
     			wordCount--;
