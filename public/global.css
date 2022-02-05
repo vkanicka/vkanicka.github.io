@@ -6,6 +6,8 @@ body {
   background-color: grey;
 }
 
+/* 
+
 body {
   color: #333;
   margin: 0;
@@ -66,4 +68,4 @@ button:not(:disabled):active {
 
 button:focus {
   border-color: #666;
-}
+} */

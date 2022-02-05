@@ -913,7 +913,7 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			t = text(t_value);
-    			attr_dev(button, "class", "alphi baseline svelte-y4zuf3");
+    			attr_dev(button, "class", "alphi baseline svelte-u23hjd");
     			add_location(button, file, 84, 8, 2139);
     		},
     		m: function mount(target, anchor) {
@@ -1016,7 +1016,7 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			t = text(t_value);
-    			attr_dev(button, "class", "alphi black svelte-y4zuf3");
+    			attr_dev(button, "class", "alphi black svelte-u23hjd");
     			add_location(button, file, 79, 10, 2004);
     		},
     		m: function mount(target, anchor) {
@@ -1065,7 +1065,7 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			t = text(t_value);
-    			attr_dev(button, "class", "alphi aqua svelte-y4zuf3");
+    			attr_dev(button, "class", "alphi aqua svelte-u23hjd");
     			add_location(button, file, 75, 10, 1880);
     		},
     		m: function mount(target, anchor) {
@@ -1152,7 +1152,7 @@ var app = (function () {
     	return block;
     }
 
-    // (103:10) {:else}
+    // (102:10) {:else}
     function create_else_block(ctx) {
     	let div;
     	let t_value = /*guessBoard*/ ctx[0][/*gr*/ ctx[18]][/*gi*/ ctx[21]] + "";
@@ -1162,9 +1162,9 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			t = text(t_value);
-    			attr_dev(div, "class", "guessI svelte-y4zuf3");
+    			attr_dev(div, "class", "guessI svelte-u23hjd");
     			attr_dev(div, "id", /*gi*/ ctx[21]);
-    			add_location(div, file, 103, 12, 2958);
+    			add_location(div, file, 102, 12, 2874);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1182,14 +1182,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(103:10) {:else}",
+    		source: "(102:10) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (101:89) 
+    // (100:89) 
     function create_if_block_1(ctx) {
     	let div;
     	let t_value = /*guessBoard*/ ctx[0][/*gr*/ ctx[18]][/*gi*/ ctx[21]] + "";
@@ -1199,9 +1199,9 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			t = text(t_value);
-    			attr_dev(div, "class", "guessI yellow svelte-y4zuf3");
+    			attr_dev(div, "class", "guessI yellow svelte-u23hjd");
     			attr_dev(div, "id", /*gi*/ ctx[21]);
-    			add_location(div, file, 101, 12, 2866);
+    			add_location(div, file, 100, 12, 2782);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1219,14 +1219,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(101:89) ",
+    		source: "(100:89) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (99:10) {#if guessBoard[gr][gi] === wordle[gi]}
+    // (98:10) {#if guessBoard[gr][gi] === wordle[gi]}
     function create_if_block(ctx) {
     	let div;
     	let t_value = /*guessBoard*/ ctx[0][/*gr*/ ctx[18]][/*gi*/ ctx[21]] + "";
@@ -1236,9 +1236,9 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			t = text(t_value);
-    			attr_dev(div, "class", "guessI green svelte-y4zuf3");
+    			attr_dev(div, "class", "guessI green svelte-u23hjd");
     			attr_dev(div, "id", /*gi*/ ctx[21]);
-    			add_location(div, file, 99, 12, 2703);
+    			add_location(div, file, 98, 12, 2619);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1256,14 +1256,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(99:10) {#if guessBoard[gr][gi] === wordle[gi]}",
+    		source: "(98:10) {#if guessBoard[gr][gi] === wordle[gi]}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (98:8) {#each guessRow as guessI, gi}
+    // (97:8) {#each guessRow as guessI, gi}
     function create_each_block_1(ctx) {
     	let show_if;
     	let if_block_anchor;
@@ -1311,14 +1311,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(98:8) {#each guessRow as guessI, gi}",
+    		source: "(97:8) {#each guessRow as guessI, gi}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (96:4) {#each guessBoard as guessRow, gr}
+    // (95:4) {#each guessBoard as guessRow, gr}
     function create_each_block(ctx) {
     	let div;
     	let t;
@@ -1339,9 +1339,9 @@ var app = (function () {
     			}
 
     			t = space();
-    			attr_dev(div, "class", "guessRow svelte-y4zuf3");
+    			attr_dev(div, "class", "guessRow svelte-u23hjd");
     			attr_dev(div, "id", /*gr*/ ctx[18]);
-    			add_location(div, file, 96, 6, 2571);
+    			add_location(div, file, 95, 6, 2487);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1387,7 +1387,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(96:4) {#each guessBoard as guessRow, gr}",
+    		source: "(95:4) {#each guessBoard as guessRow, gr}",
     		ctx
     	});
 
@@ -1448,21 +1448,21 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(h1, "class", "svelte-y4zuf3");
+    			attr_dev(h1, "class", "svelte-u23hjd");
     			add_location(h1, file, 70, 2, 1561);
-    			attr_dev(div0, "class", "keyboard svelte-y4zuf3");
+    			attr_dev(div0, "class", "keyboard svelte-u23hjd");
     			add_location(div0, file, 71, 2, 1579);
     			attr_dev(button0, "id", "backButton");
     			attr_dev(button0, "type", "text");
-    			attr_dev(button0, "class", "svelte-y4zuf3");
+    			attr_dev(button0, "class", "svelte-u23hjd");
     			add_location(button0, file, 90, 2, 2272);
     			attr_dev(button1, "id", "resetButton");
     			attr_dev(button1, "type", "submit");
-    			attr_dev(button1, "class", "svelte-y4zuf3");
+    			attr_dev(button1, "class", "svelte-u23hjd");
     			add_location(button1, file, 91, 2, 2340);
-    			attr_dev(div1, "class", "gridContainer svelte-y4zuf3");
-    			add_location(div1, file, 94, 2, 2498);
-    			attr_dev(main, "class", "svelte-y4zuf3");
+    			attr_dev(div1, "class", "gridContainer svelte-u23hjd");
+    			add_location(div1, file, 93, 2, 2414);
+    			attr_dev(main, "class", "svelte-u23hjd");
     			add_location(main, file, 69, 0, 1552);
     		},
     		l: function claim(nodes) {
