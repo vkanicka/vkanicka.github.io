@@ -1,9 +1,9 @@
 <script>
-  export let wordle;
+  import { wordles } from "./wordles";
   const ALPHABET = "QWERTYUIOPASDFGHJKLZXCVBNM".split("");
   let letterCount = 0;
   let wordCount = 0;
-  const guessBoard = [
+  let guessBoard = [
     ["", "", "", "", ""],
     ["", "", "", "", ""],
     ["", "", "", "", ""],
@@ -19,13 +19,40 @@
       letterCount = 0;
     }
   };
+  const reset = () => {
+    letterCount = 0;
+    wordCount = 0;
+    guessBoard = [
+      ["", "", "", "", ""],
+      ["", "", "", "", ""],
+      ["", "", "", "", ""],
+      ["", "", "", "", ""],
+      ["", "", "", "", ""],
+      ["", "", "", "", ""],
+    ];
+    wordle = pickWordle();
+  };
   let key;
   let keyCode;
+  const rando = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  };
+
+  const pickWordle = () => {
+    return wordles[rando(1, 500)].toUpperCase();
+  };
+  let wordle = pickWordle();
 
   const handleKeydown = (event) => {
-    key = event.key;
+    key = event.key.toUpperCase();
     keyCode = event.keyCode;
-    add(key.toUpperCase());
+    if (key === "BACKSPACE") {
+      undo();
+    } else if (key === "ENTER") {
+      reset();
+    } else if (ALPHABET.indexOf(key) >= 0) {
+      add(key);
+    }
   };
   const undo = () => {
     console.log("back button clicked");
@@ -70,7 +97,7 @@
     {/each}
   </div>
   <button id="backButton" type="text" on:click={undo}>Back</button>
-  <!-- <button type="submit">Submit</button> -->
+  <button id="resetButton" type="text" on:click={reset}>Reset</button>
 
   <div class="gridContainer">
     {#each guessBoard as guessRow, gr}
@@ -99,9 +126,8 @@
     max-width: 1000px;
     margin: 0 auto;
   }
-  #backButton {
-    /* width: 5rem;
-    height: 4rem; */
+  #backButton,
+  #resetButton {
     border-radius: 0.5rem;
     margin: 0.5rem;
     font-size: 2rem;

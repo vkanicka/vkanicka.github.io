@@ -1,1 +1,0 @@
-<button>{props.letter}</button>
